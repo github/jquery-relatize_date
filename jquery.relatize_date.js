@@ -33,7 +33,7 @@
         return new Array((2 - string.length) + 1).join('0') + string
       };
 
-      return format.replace(/\%([aAbBcdHImMpSwyY])/g, function(part) {
+      return format.replace(/\%([aAbBcdeHImMpSwyY])/g, function(part) {
         switch(part[1]) {
           case 'a': return $r.shortDays[day]; break;
           case 'A': return $r.days[day]; break;
@@ -41,6 +41,7 @@
           case 'B': return $r.months[month]; break;
           case 'c': return date.toString(); break;
           case 'd': return pad(date.getDate()); break;
+          case 'e': return date.getDate(); break;
           case 'H': return pad(hours); break;
           case 'I': return pad((hours + 12) % 12); break;
           case 'm': return pad(month + 1); break;
