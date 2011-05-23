@@ -42,10 +42,10 @@
           case 'c': return date.toString(); break;
           case 'd': return pad(date.getDate()); break;
           case 'H': return pad(hours); break;
-          case 'I': return pad((hours + 12) % 12); break;
+          case 'I': return pad(hours > 12 ? hours - 12 : hours); break;
           case 'm': return pad(month + 1); break;
           case 'M': return pad(minutes); break;
-          case 'p': return hours > 12 ? 'PM' : 'AM'; break;
+          case 'p': return hours > 11 ? 'PM' : 'AM'; break;
           case 'S': return pad(date.getSeconds()); break;
           case 'w': return day; break;
           case 'y': return pad(date.getFullYear() % 100); break;
